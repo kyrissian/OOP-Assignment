@@ -62,6 +62,25 @@ class Student:
         return tuple(self.grades)
 
 
+print("=" * 40)
+print("PART 1: Creating the Objects")
+print("=" * 40)
+
+# Display initial student info before any grades are added
+print("=" * 40)
+print("PART 1: Class Definition")
+print("=" * 40)
+
+student1 = Student("Kathy Booth",  "kathy@school.com",  [99, 92, 95])
+student2 = Student("Andrea Heffernan",   "andrea@school.com",  [91, 85, 97])
+student3 = Student("NaYoung Song",  "nayoungatschool.com",  [75, 68, 80])
+
+print("Initial student info:")
+print()
+student1.display_info()
+student2.display_info()
+student3.display_info()
+
 
 # PART 2: Working with Objects
 # ─────────────────────────────────────────────────
@@ -87,8 +106,7 @@ student2.add_grade(93)
 student3.add_grade(60)
 student3.add_grade(78)
 
-# Print info for each student.
-# display_info() prints name, email, grades, and average — all in one method call.
+# Print updated info after adding new grades for each student
 student1.display_info()
 student2.display_info()
 student3.display_info()
