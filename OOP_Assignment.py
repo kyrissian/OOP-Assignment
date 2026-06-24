@@ -74,7 +74,7 @@ print("=" * 40)
 # Each call runs __init__ and gives us back a fully built object.
 student1 = Student("Kathy Booth",  "kathy@school.com",  [99, 92, 95])
 student2 = Student("Andrea Heffernan",   "andrea@school.com",  [91, 85, 97])
-student3 = Student("NaYoung Song",      "nayoungatschool.com",  [75, 68, 80])
+student3 = Student("NaYoung Song",  "nayoungatschool.com",  [75, 68, 80])
 
 # Add 2 new grades to each student using the add_grade method.
 # This calls .append() internally and modifies each student's grades list in place.
@@ -82,7 +82,7 @@ student1.add_grade(94)
 student1.add_grade(98)
 
 student2.add_grade(88)
-student2.add_grade(91)
+student2.add_grade(93)
 
 student3.add_grade(60)
 student3.add_grade(78)
@@ -110,6 +110,14 @@ student_dict = {
     student3.email: student3,
 }
 
+# Print the dictionary to show all email -> student mappings.
+# We loop with .items() because printing the raw dict would show ugly memory addresses
+# for the Student objects instead of their actual names.
+print("Student Dictionary (email -> student name):")
+for student_email, student in student_dict.items():
+    print(f"  {student_email} -> {student.name}")
+print()
+
 # --- Function: get_student_by_email ---
 # .get(email) returns the Student object if the email exists, or None if it doesn't.
 # This is "safe" because it won't crash with a KeyError like student_dict[email] would.
@@ -123,7 +131,7 @@ def get_student_by_email(email):
     """
     return student_dict.get(email)  # Returns None automatically if key is missing
 
-# Demonstrate the lookup function with a valid and an invalid email
+# Demonstrate the lookup function with an email that EXISTS and one that DOESN'T
 found = get_student_by_email("kathy@school.com")
 if found:                    # 'if found' is True when the object is not None
     print(f"Found student: {found.name}")
@@ -151,7 +159,7 @@ print("=" * 40)
 
 # Call grades_tuple() on student1 — this returns a tuple version of her grades list.
 s1_tuple = student1.grades_tuple()
-print(f"Student1 grades as tuple: {s1_tuple}")
+print(f"{student1.name}'s grades as a tuple: {s1_tuple}")
 
 # Tuples are IMMUTABLE — you cannot change their values after creation.
 # We try to assign to index 0 inside a try/except block.
@@ -189,7 +197,7 @@ for student in all_students:
     print(f"  First grade: {first_grade}  |  Last grade: {last_grade}")
 
     # len() returns the number of items currently in the list.
-    print(f"  Number of grades remaining: {len(student.grades)}")
+    print(f"  Number of grades recorded: {len(student.grades)}")
     print()
 
 
