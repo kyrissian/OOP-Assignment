@@ -62,10 +62,6 @@ class Student:
         return tuple(self.grades)
 
 
-print("=" * 40)
-print("PART 1: Creating the Objects")
-print("=" * 40)
-
 # Display initial student info before any grades are added
 print("=" * 40)
 print("PART 1: Class Definition")
